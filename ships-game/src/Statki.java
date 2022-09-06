@@ -25,18 +25,6 @@ public class Statki {
         }
          g2.wystwietlWlasnaPlansze();
          System.out.println();
-         // 2 statek 1 gracza:
-       /* try {
-            g1.ustawStatek(5, 4, false, 4);
-        } catch (InvalidOperationException e) {
-            System.out.println(e.getMessage());
-        }
-         // 2 statek 2 gracza:
-        try {
-            g2.ustawStatek(9, 6, false, 3);
-        } catch (InvalidOperationException e) {
-            System.out.println(e.getMessage());
-        } */
          // 1 strzal 1 gracza:
         try {
             g1.efektMojegoStrzalu(2, 0, g2.strzalOdPrzeciwnika(2, 0));
