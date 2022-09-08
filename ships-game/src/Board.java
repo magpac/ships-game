@@ -68,14 +68,14 @@ public class Board {
         }
         boardContent[row][column] = mark;
     }
-    public boolean isGameOver() {
+    public boolean contains(Character mark) {
         for (int i = 0; i < boardContent.length; i++) {
             for (int j = 0; j < boardContent[i].length; j++) {
-                if (boardContent[i][j] == '@') {
-                    return false;
+                if (boardContent[i][j] == mark) {
+                    return true;
                 }
             }
         }
-        return true;
+        return false;
     }
 }

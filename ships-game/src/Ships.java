@@ -4,7 +4,7 @@
  * 3. main z prostym wczytywaniem danych z konsoli
  */
 
-public class Statki {
+public class Ships {
 
      public static void main(String[] args) {
          Player g1 = new Player(10, 10);
@@ -32,7 +32,7 @@ public class Statki {
             System.out.println(e.getMessage());
         }
 
-         if (g2.gameOver() == true) {
+         if (g2.isGameOver() == true) {
              System.out.println("Koniec gry. Wygrał gracz 1.");
          }
         // 1 strzal 2 gracza
@@ -42,7 +42,7 @@ public class Statki {
              System.out.println(e.getMessage());
          }
 
-         if (g1.gameOver() == true) {
+         if (g1.isGameOver() == true) {
              System.out.println("Koniec gry. Wygrał gracz 2.");
          }
 

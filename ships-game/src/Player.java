@@ -56,7 +56,7 @@ public class Player {
         }
     }
 
-    public boolean gameOver() {
-       return ownBoard.isGameOver();
+    public boolean isGameOver() {
+       return !ownBoard.contains('@');
     }
 }
