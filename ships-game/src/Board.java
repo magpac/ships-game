@@ -41,6 +41,21 @@ public class Board {
                 }
             }
         }
+
+        for (int i = row; i < row + lengthShip; i++) {
+            for (int j = column; j < column + lengthShip; j++) {
+                if (isVertical) {
+                    if (isAdjoin(i, column)) {
+                        throw new InvalidOperationException("Invalid coordinates entered. Ships cannot touch each other.");
+                    }
+                } else {
+                    if (isAdjoin(row, j)) {
+                        throw new InvalidOperationException("Invalid coordinates entered. Ships cannot touch each other.");
+                    }
+                }
+            }
+        }
+
         for (int i = row; i < row + lengthShip; i++) {
             for (int j = column; j < column + lengthShip; j++) {
                 if (isVertical) {
@@ -50,6 +65,27 @@ public class Board {
                 }
             }
         }
+    }
+
+    private boolean isAdjoin(int row, int column) {
+        if (row - 1 >= 0 && column - 1 >= 0 && boardContent[row - 1][column - 1] == '@') {
+            return true;
+        } else if (row - 1 >= 0 && boardContent[row - 1][column] == '@') {
+            return true;
+        } else if (row - 1 >= 0 && column + 1 < boardContent[row - 1].length && boardContent[row - 1][column + 1] == '@') {
+            return true;
+        } else if (column - 1 >= 0 && boardContent[row][column - 1] == '@') {
+            return true;
+        } else if (column + 1 < boardContent[row].length && boardContent[row][column + 1] == '@') {
+            return true;
+        } else if (row + 1 < boardContent.length && column - 1 >= 0 && boardContent[row + 1][column - 1] == '@') {
+            return true;
+        } else if (row + 1 < boardContent.length && boardContent[row + 1][column] == '@') {
+            return true;
+        } else if (row + 1 < boardContent.length && column + 1 < boardContent[row + 1].length && boardContent[row + 1][column + 1] == '@') {
+            return true;
+        }
+        return false;
     }
 
     public Character fieldStatus(int row, int column) throws IndexOutOfBoundsException {
@@ -68,6 +104,7 @@ public class Board {
         }
         boardContent[row][column] = mark;
     }
+
     public boolean contains(Character mark) {
         for (int i = 0; i < boardContent.length; i++) {
             for (int j = 0; j < boardContent[i].length; j++) {
