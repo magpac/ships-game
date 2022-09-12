@@ -1,3 +1,8 @@
+package model;
+
+import exceptions.InvalidOperationException;
+import exceptions.WrongCharException;
+
 public class Player {
 
     private Board ownBoard;
@@ -15,7 +20,6 @@ public class Player {
         } catch (IndexOutOfBoundsException e) {
             throw new InvalidOperationException("Invalid coordinates entered. The ship is off the board.", e);
         }
-
     }
 
     public void displayOwnBoard() {

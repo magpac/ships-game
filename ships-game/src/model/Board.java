@@ -1,3 +1,8 @@
+package model;
+
+import exceptions.InvalidOperationException;
+import exceptions.WrongCharException;
+
 public class Board {
     private final Character[][] boardContent;
     private final char[] allowedChars;
@@ -13,12 +18,6 @@ public class Board {
     }
 
     public void display() {
-        /* for (Character[] row : boardContent) {
-            for (Character field : row) {
-
-            }
-        } */
-
         for (int i = 0; i < boardContent.length; i++) {
             for (int j = 0; j < boardContent[i].length; j++) {
                 System.out.print(boardContent[i][j]);

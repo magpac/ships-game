@@ -1,7 +1,10 @@
+import exceptions.InvalidOperationException;
+import model.Player;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class Ships {
+public class Main {
     public static void main(String[] args) {
         Player p1 = new Player(10, 10);
         Player p2 = new Player(10, 10);
@@ -66,7 +69,7 @@ public class Ships {
                 p1.ownShotEffect(row, column, p2.enemyShot(row, column));
 
                 if (p2.isGameOver()) {
-                    System.out.println("Game over. Player 1 won.");
+                    System.out.println("Game over. model.Player 1 won.");
                     p1.displayEnemyBoard();
                     break;
                 }
@@ -85,7 +88,7 @@ public class Ships {
                 p1.displayEnemyBoard();
 
                 if (p1.isGameOver()) {
-                    System.out.println("Game over. Player 2 won.");
+                    System.out.println("Game over. model.Player 2 won.");
                     p2.displayEnemyBoard();
                     break;
                 }
